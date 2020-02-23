@@ -1,5 +1,5 @@
 package com.wildonestudio.myfavoritemovie.ui.main
 
 object ApikeyRepositories {
-    val MOVIE_APIKEY = "your-apikey"
+    val MOVIE_DB_APIKEY = "your-apikey"
 }
