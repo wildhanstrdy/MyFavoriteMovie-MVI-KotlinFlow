@@ -16,6 +16,9 @@ android {
 
         buildConfigField "String", "BASE_URL_API", "\"https://github-trending-api.now.sh/\""
     }
+    lintOptions {
+        abortOnError false
+    }
     buildTypes {
         debug {
             buildConfigField 'okhttp3.logging.HttpLoggingInterceptor.Level', 'RETROFIT_LOG_LEVEL', 'okhttp3.logging.HttpLoggingInterceptor.Level.BODY'
