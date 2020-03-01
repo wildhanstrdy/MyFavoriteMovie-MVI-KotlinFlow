@@ -13,9 +13,15 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BASE_URL_API", "\"https://github-trending-api.now.sh/\""
     }
     buildTypes {
+        debug {
+            buildConfigField 'okhttp3.logging.HttpLoggingInterceptor.Level', 'RETROFIT_LOG_LEVEL', 'okhttp3.logging.HttpLoggingInterceptor.Level.BODY'
+        }
         release {
+            buildConfigField 'okhttp3.logging.HttpLoggingInterceptor.Level', 'RETROFIT_LOG_LEVEL', 'okhttp3.logging.HttpLoggingInterceptor.Level.BODY.NONE'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
