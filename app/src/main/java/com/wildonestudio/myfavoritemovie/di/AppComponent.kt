@@ -1,17 +1,18 @@
 package com.wildonestudio.myfavoritemovie.di
 
 import android.app.Application
+import com.wildonestudio.myfavoritemovie.MovieApplication
 import dagger.BindsInstance
 import dagger.Component
+import dagger.android.AndroidInjectionModule
 
-@Component(modules = [CommonModule::class])
+@Component(modules = [CommonModule::class, AppAndroidModule::class, AndroidInjectionModule::class])
 interface AppComponent {
-    fun inject(app: Application)
-
+    fun inject(app:MovieApplication)
     @Component.Builder
     interface Builder {
-        fun build(): AppComponent
         @BindsInstance
-        fun application(app: Application): Builder
+        fun inject(app: Application): Builder
+        fun build(): AppComponent
     }
 }
